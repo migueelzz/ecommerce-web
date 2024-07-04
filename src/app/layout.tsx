@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google'
 
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { Alert } from '@/components/alert'
 
 import './globals.css'
+import { Alert } from '@/components/alert'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,11 +23,11 @@ export default function RootLayout({
     <html lang="pt-BR" className="antialiased">
       <body className={inter.className}>
         <Alert />
-        <div className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col px-4">
-          <Header />
-          <main className="pb-8">{children}</main>
-          <Footer />
+        <Header />
+        <div className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col px-4 lg:px-0">
+          <main className="pb-8 pt-4">{children}</main>
         </div>
+        <Footer />
       </body>
     </html>
   )
