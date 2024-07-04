@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { Alert } from '@/components/alert'
+
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="antialiased">
       <body className={inter.className}>
+        <Alert />
         <div className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col px-4">
           <Header />
           <main className="pb-8">{children}</main>

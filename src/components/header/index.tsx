@@ -1,5 +1,5 @@
 import { Button } from '../button'
-import { Bell, ShoppingBag } from 'lucide-react'
+import { Bell, Menu, ShoppingBag } from 'lucide-react'
 import { NavLink } from '../nav-link'
 import { SearchInput } from '../search-input'
 import { AccountMenu } from '../account-menu'
@@ -17,20 +17,23 @@ export function Header() {
             </span>
           </div>
         </Link>
-        <SearchInput />
+        <div className="hidden w-full justify-center lg:flex">
+          <SearchInput />
+        </div>
         <div className="flex items-center gap-2">
-          <Button variant="ghost">
+          <Button variant="ghost" className="hidden lg:flex">
             <ShoppingBag />
           </Button>
-          <Button variant="ghost">
+          <Button variant="ghost" className="hidden lg:flex">
             <Bell />
           </Button>
           <AccountMenu />
+          <Menu className="flex lg:hidden" />
         </div>
       </div>
 
       {/* Links - categorias */}
-      <nav className="flex w-full items-center gap-2">
+      <nav className="hidden w-full items-center gap-2 lg:flex">
         <NavLink href="/" title="Inicio" />
         <NavLink href="/camisetas" title="Camisetas" />
         <NavLink href="/calcas" title="Calças" />

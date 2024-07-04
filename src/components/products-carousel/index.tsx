@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { CardProducts } from '../card-products'
+import { Button } from '../button'
 
 interface ProductsCarouselProps {
   title: string
@@ -28,8 +29,18 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
   }, [emblaApi])
 
   return (
-    <div className="flex flex-col gap-2 py-8">
-      <h1 className="text-xl font-semibold">{title}</h1>
+    <div className="flex flex-col gap-4 py-8">
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-semibold">{title}</h1>
+        <div className="flex items-center">
+          <Button variant="ghost" onClick={scrollPrev}>
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          <Button variant="ghost" onClick={scrollNext}>
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+        </div>
+      </div>
       <div className="relative overflow-hidden" ref={emblaRef}>
         <div className="grid-cols-auto grid grid-flow-col gap-2">
           {products.map((product) => {
@@ -39,22 +50,6 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
               </div>
             )
           })}
-        </div>
-        <div className="absolute left-4 top-1/3 -translate-y-1/2">
-          <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 bg-zinc-100 text-zinc-800 hover:bg-zinc-200"
-            onClick={scrollPrev}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="absolute right-4 top-1/3 -translate-y-1/2">
-          <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 bg-zinc-100 text-zinc-800 hover:bg-zinc-200"
-            onClick={scrollNext}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
         </div>
       </div>
     </div>
