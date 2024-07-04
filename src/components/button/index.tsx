@@ -3,18 +3,20 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
   base: [
-    'rounded-lg font-semibold outline-none transition',
+    'rounded-md font-semibold outline-none transition',
     'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-900',
     'active:opacity-80 disabled:opacity-60 ',
   ],
 
   variants: {
     variant: {
-      primary: 'bg-zinc-900 text-white [&:not(:disabled)]:hover:bg-zinc-700',
-      secondary: 'bg-zinc-300 text-white [&:not(:disabled)]:hover:bg-zinc-500',
-      ghost: 'hover:bg-zinc-50 shadow-none text-zinc-500 dark:text-zinc-400',
-      outline: 'border-2 border-zinc-300 text-zinc-400 hover:bg-zinc-50',
-      link: 'hover:text-zinc-700 shadow-none text-zinc-500',
+      primary: 'bg-zinc-900 text-white [&:not(:disabled)]:hover:bg-zinc-600',
+      secondary:
+        'bg-zinc-200 text-zinc-900 [&:not(:disabled)]:hover:bg-zinc-300',
+      ghost: 'hover:bg-zinc-50 shadow-none text-zinc-900',
+      outline:
+        'border-2 border-zinc-900 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-100',
+      link: 'hover:text-zinc-900 shadow-none text-zinc-500',
     },
 
     size: {

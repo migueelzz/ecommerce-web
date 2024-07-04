@@ -7,8 +7,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ children, type, ...props }, ref) => {
     return (
-      <div className="flex w-full min-w-[300px] items-center gap-2 rounded-lg border-2 border-zinc-100 bg-zinc-100 px-4 py-3 focus-within:border-zinc-300">
-        {children}
+      <div className="flex w-full min-w-[300px] items-center gap-2 border-2 border-zinc-700 px-4 py-3 focus-within:border-zinc-900">
         <input
           type={type}
           autoComplete="off"
@@ -16,6 +15,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
+        {children}
       </div>
     )
   },

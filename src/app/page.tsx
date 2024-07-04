@@ -58,10 +58,14 @@ export default function Home() {
     <div className="w-full">
       <Hero />
 
-      <div className="pt-8">
-        <h1 className="text-xl font-semibold">Mais vendidos</h1>
-        <ProductsCarousel products={PRODUCTS} />
+      <ProductsCarousel products={PRODUCTS} title="Lançamentos" />
+
+      <div className="flex items-center gap-2">
+        <div className="h-[250px] w-full rounded-md bg-zinc-100" />
+        <div className="h-[250px] w-full rounded-md bg-zinc-100" />
       </div>
+
+      <ProductsCarousel products={PRODUCTS} title="Mais vendidos" />
     </div>
   )
 }

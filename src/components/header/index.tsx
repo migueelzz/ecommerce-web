@@ -1,59 +1,35 @@
-'use client'
-
-import { useState } from 'react'
 import { Button } from '../button'
-import { Input } from '../input'
-import { Bell, Search, ShoppingCart } from 'lucide-react'
+import { Bell, ShoppingBag } from 'lucide-react'
 import { NavLink } from '../nav-link'
+import { SearchInput } from '../search-input'
+import { AccountMenu } from '../account-menu'
+import Link from 'next/link'
 
 export function Header() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-
   return (
     <header className="mx-auto flex w-full max-w-[1280px] flex-col gap-6 py-4">
       <div className="flex items-center justify-between">
-        <div className="h-12 w-12 rounded bg-zinc-100" />
-        <div className="w-full max-w-[600px]">
-          <Input placeholder="Buscar produtos...">
-            <Search className="h-5 w-5 text-zinc-400" />
-          </Input>
-        </div>
+        {/* Logotipo */}
+        <Link href="/">
+          <div className="flex h-14 w-14 items-center justify-center rounded bg-zinc-900">
+            <span className="text-3xl font-bold uppercase tracking-tight text-zinc-100">
+              DG
+            </span>
+          </div>
+        </Link>
+        <SearchInput />
         <div className="flex items-center gap-2">
-          {isAuthenticated ? (
-            <>
-              <Button variant="ghost">
-                <ShoppingCart />
-              </Button>
-              <Button variant="ghost">
-                <Bell />
-              </Button>
-
-              <img
-                src="https://github.com/migueelzz.png"
-                className="ml-4 h-12 w-12 rounded-full"
-              />
-            </>
-          ) : (
-            <>
-              <Button
-                variant="primary"
-                onClick={() => setIsAuthenticated(true)}
-                className="flex flex-wrap items-center"
-              >
-                Entrar
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => setIsAuthenticated(true)}
-                className="flex flex-wrap items-center"
-              >
-                Cadastrar
-              </Button>
-            </>
-          )}
+          <Button variant="ghost">
+            <ShoppingBag />
+          </Button>
+          <Button variant="ghost">
+            <Bell />
+          </Button>
+          <AccountMenu />
         </div>
       </div>
 
+      {/* Links - categorias */}
       <nav className="flex w-full items-center gap-2">
         <NavLink href="/" title="Inicio" />
         <NavLink href="/camisetas" title="Camisetas" />

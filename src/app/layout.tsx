@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="antialiased">
       <body className={inter.className}>
         <div className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col px-4">
           <Header />
