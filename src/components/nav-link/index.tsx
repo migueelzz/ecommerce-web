@@ -18,7 +18,7 @@ export function NavLink({ children, title, href, ...props }: NavLinkProps) {
   return (
     <div
       className={clsx(
-        'flex items-center justify-between rounded-md px-3 py-2 text-sm font-semibold transition hover:bg-zinc-50',
+        'flex items-center justify-between rounded-md bg-zinc-50 px-3 py-2 text-sm font-semibold transition hover:bg-zinc-100',
         isActive ? 'text-rose-500' : 'text-zinc-600',
       )}
     >

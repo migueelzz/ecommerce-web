@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="flex w-full flex-col gap-4 bg-zinc-100 pt-8">
       <div className="mx-auto mt-auto flex w-full max-w-[1280px] flex-col">
-        <div className="flex grid-cols-5 flex-col gap-4 py-4 lg:grid">
+        <div className="flex grid-cols-5 flex-col gap-4 px-4 py-4 lg:grid lg:px-0">
           {/* Logotipo */}
           <Link href="/">
             <div className="flex h-14 w-14 items-center justify-center rounded bg-zinc-900">
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center border-t py-4">
+        <div className="flex items-center justify-center border-t px-4 py-4 lg:px-0">
           <span className="text-sm text-zinc-500">
             Copyright &copy; {new Date().getFullYear()} Dona Getta. Todos os
             direitos reservados

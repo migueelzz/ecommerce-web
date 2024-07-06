@@ -22,7 +22,7 @@ export function AccountMenu() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content
-        className="data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade mr-2 mt-2 min-w-40 rounded-md border border-zinc-200 bg-white p-2 shadow-md will-change-[opacity,transform] dark:border-zinc-700 dark:bg-zinc-900"
+        className="mr-2 mt-2 min-w-40 rounded-md border border-zinc-200 bg-white p-2 shadow-md will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade dark:border-zinc-700 dark:bg-zinc-900"
         align="end"
       >
         {!isAuth ? (

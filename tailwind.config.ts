@@ -5,6 +5,9 @@ const config: Config = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        product: '250px 1fr',
+      },
       keyframes: {
         slideDownAndFade: {
           from: { opacity: '0', transform: 'translateY(-2px)' },
@@ -34,6 +37,20 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        '.no-scrollbar::--webkit-scrollbar': {
+          display: 'none',
+        },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      }
+
+      addUtilities(newUtilities)
+    },
+  ],
 }
 export default config
