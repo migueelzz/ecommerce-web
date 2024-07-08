@@ -1,11 +1,11 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 
 import { Button } from '../button'
-import { Bell, Menu, ShoppingBag, X } from 'lucide-react'
+import { Menu, Search, ShoppingBag, X } from 'lucide-react'
 import { NavLink } from '../nav-link'
-import { SearchInput } from '../search-input'
 import { AccountMenu } from '../account-menu'
 import Link from 'next/link'
+import { Input } from '../input'
 
 export function Header() {
   return (
@@ -20,17 +20,20 @@ export function Header() {
               </span>
             </div>
           </Link>
-          <div className="hidden w-full justify-center lg:flex">
-            <SearchInput />
+          <div className="hidden w-full max-w-[600px] justify-center lg:flex">
+            <Input autoComplete="off" placeholder="Buscar por produtos...">
+              <Button variant="ghost" size="sm">
+                <Search className="h-5 w-5 text-zinc-400" />
+              </Button>
+            </Input>
           </div>
           <div className="flex items-center lg:gap-2">
-            <Button variant="ghost" className="hidden lg:flex">
-              <ShoppingBag className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" className="hidden lg:flex">
-              <Bell className="h-5 w-5" />
-            </Button>
             <div className="hidden lg:flex">
+              <Button variant="ghost" size="icon">
+                <Link href="/carrinho">
+                  <ShoppingBag className="h-5 w-5" />
+                </Link>
+              </Button>
               <AccountMenu />
             </div>
 
@@ -38,7 +41,7 @@ export function Header() {
               asChild
               className="data-[state=open]:hidden lg:hidden"
             >
-              <Button variant="ghost">
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
             </Collapsible.Trigger>
@@ -47,7 +50,7 @@ export function Header() {
               asChild
               className="data-[state=closed]:hidden lg:hidden"
             >
-              <Button variant="ghost">
+              <Button variant="ghost" size="icon">
                 <X className="h-6 w-6" />
               </Button>
             </Collapsible.Trigger>
@@ -60,7 +63,7 @@ export function Header() {
         >
           <Collapsible.Trigger asChild>
             <Link
-              className="p-2 text-sm font-semibold text-zinc-700 hover:text-zinc-900"
+              className="py-2 text-sm font-semibold text-zinc-700 hover:text-zinc-900"
               href="/login"
             >
               Fazer login / cadastrar

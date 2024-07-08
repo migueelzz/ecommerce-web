@@ -9,6 +9,7 @@ import { Button } from '../button'
 interface ProductsCarouselProps {
   title: string
   products: {
+    id: string
     name: string
     description: string
     price: number
@@ -18,7 +19,7 @@ interface ProductsCarouselProps {
 
 export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    slidesToScroll: 4,
+    slidesToScroll: 1,
   })
 
   const scrollPrev = useCallback(() => {
@@ -33,10 +34,10 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-medium text-zinc-700">{title}</h1>
         <div className="flex items-center">
-          <Button variant="ghost" onClick={scrollPrev}>
+          <Button variant="ghost" size="icon" onClick={scrollPrev}>
             <ChevronLeft className="h-6 w-6" />
           </Button>
-          <Button variant="ghost" onClick={scrollNext}>
+          <Button variant="ghost" size="icon" onClick={scrollNext}>
             <ChevronRight className="h-6 w-6" />
           </Button>
         </div>

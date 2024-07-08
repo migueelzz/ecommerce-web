@@ -1,5 +1,8 @@
+import Link from 'next/link'
+
 interface CardProductsProps {
   product: {
+    id: string
     name: string
     description: string
     price: number
@@ -9,7 +12,10 @@ interface CardProductsProps {
 
 export function CardProducts({ product }: CardProductsProps) {
   return (
-    <div className="flex max-w-[250px] flex-col gap-2 rounded-lg border border-white p-2 transition-all duration-200 ease-in hover:border-zinc-200">
+    <Link
+      href={`/produtos/${product.id}`}
+      className="flex max-w-[250px] flex-col gap-2 rounded-lg border border-white p-2 transition-all duration-200 ease-in hover:border-zinc-200"
+    >
       <img
         src={product.img_url}
         alt=""
@@ -27,17 +33,6 @@ export function CardProducts({ product }: CardProductsProps) {
           R$ {product.price - 9.99} à vista
         </span>
       </div>
-
-      <div className="flex items-center justify-between gap-2">
-        {/* <Button className="flex w-full items-center justify-center gap-2">
-          <ShoppingBag className="h-5 w-5" />
-          Adicionar ao carrinho
-        </Button>
-
-        <Button variant="secondary">
-          <Heart className="h-5 w-5" />
-        </Button> */}
-      </div>
-    </div>
+    </Link>
   )
 }

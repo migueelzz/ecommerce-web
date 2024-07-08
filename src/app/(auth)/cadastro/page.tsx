@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 export default function Cadastro() {
   return (
     <div>
-      <h1 className="text-xl font-medium">Cadastro</h1>
+      <h1 className="text-2xl font-medium">Cadastro</h1>
       <form className="mx-auto flex w-full max-w-[800px] flex-col gap-4 p-8">
         <div className="space-y-2">
           <label htmlFor="email">E-mail</label>
@@ -53,9 +53,9 @@ export default function Cadastro() {
           </div>
         </div>
 
-        <Button size="lg" className="ml-auto max-w-52">
+        <Button className="ml-auto max-w-52">
           Continuar
-          <ArrowRight />
+          <ArrowRight className="h-5 w-5" />
         </Button>
       </form>
     </div>

@@ -16,7 +16,7 @@ export function AccountMenu() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" size="icon">
           <User />
         </Button>
       </DropdownMenu.Trigger>
@@ -40,7 +40,9 @@ export function AccountMenu() {
               Não possui uma conta?
             </span>
             <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
-              Cadastre-se
+              <Link href="/cadastro" className="flex w-full items-center gap-4">
+                Cadastre-se
+              </Link>
             </DropdownMenu.Item>
           </>
         ) : (
