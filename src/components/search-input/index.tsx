@@ -2,7 +2,7 @@ import { Search } from 'lucide-react'
 
 export function SearchInput() {
   return (
-    <form className="flex w-full max-w-[600px] items-center gap-2 rounded-md border-2 border-zinc-100 bg-zinc-50 px-4 py-3 focus-within:border-zinc-900">
+    <form className="flex w-full max-w-[600px] items-center gap-2 rounded-md border-2 border-zinc-100 bg-zinc-50 px-4 py-3 focus-within:border-zinc-300 focus-within:shadow-md">
       <input
         type="text"
         autoComplete="off"

@@ -18,7 +18,7 @@ interface ProductsCarouselProps {
 
 export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    slidesToScroll: 3,
+    slidesToScroll: 4,
   })
 
   const scrollPrev = useCallback(() => {
@@ -31,7 +31,7 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
   return (
     <div className="flex flex-col gap-4 py-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">{title}</h1>
+        <h1 className="text-xl font-medium text-zinc-700">{title}</h1>
         <div className="flex items-center">
           <Button variant="ghost" onClick={scrollPrev}>
             <ChevronLeft className="h-6 w-6" />
@@ -45,7 +45,7 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
         <div className="grid-cols-auto grid grid-flow-col gap-4">
           {products.map((product) => {
             return (
-              <div className="w-[300px] min-w-0 flex-none" key={product.name}>
+              <div className="w-[250px] min-w-0 flex-none" key={product.name}>
                 <CardProducts product={product} />
               </div>
             )

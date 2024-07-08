@@ -3,49 +3,49 @@ import { ProductsCarousel } from '@/components/products-carousel'
 
 const PRODUCTS = [
   {
-    name: 'Nome do produto',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Trico-Otimismo.webp?v=1663770862',
   },
   {
-    name: 'Nome do produto 2',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Renda.webp?v=1663770862',
   },
   {
-    name: 'Nome do produto 3',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Monocromatico.webp?v=1663770863',
   },
   {
-    name: 'Nome do produto 4',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/y2k.webp?v=1663770863',
   },
   {
-    name: 'Nome do produto 5',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/romance-no-ar.webp?v=1663770863',
   },
   {
-    name: 'Nome do produto 6',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
       'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Barbiecore.webp?v=1663770862',
   },
   {
-    name: 'Nome do produto 7',
+    name: 'Moletom FIRE Random Letters (Azul Claro)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:

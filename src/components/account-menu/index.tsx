@@ -1,13 +1,13 @@
 'use client'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { Heart, LogOut, User } from 'lucide-react'
+import { User } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Button } from '../button'
 
 export function AccountMenu() {
-  const isAuth = true
+  const isAuth = false
   const { push } = useRouter()
 
   function handleLogOut() {
@@ -22,37 +22,47 @@ export function AccountMenu() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content
-        className="mr-2 mt-2 min-w-40 rounded-md border border-zinc-200 bg-white p-2 shadow-md will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade dark:border-zinc-700 dark:bg-zinc-900"
+        className="mr-2 mt-2 min-w-40 rounded-md border border-zinc-200 bg-white p-2 text-sm shadow-md will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade dark:border-zinc-700 dark:bg-zinc-900"
         align="end"
       >
         {!isAuth ? (
-          <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">
-            <User className="h-5 w-5" />
-            Fazer login
-          </DropdownMenu.Item>
+          <>
+            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
+              <Link href="/login" className="flex w-full items-center gap-4">
+                Fazer login
+              </Link>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
+              Meus pedidos
+            </DropdownMenu.Item>
+            <DropdownMenu.Separator className="m-2 h-px bg-zinc-100 dark:bg-zinc-700" />
+            <span className="px-4 text-sm font-semibold text-zinc-700">
+              Não possui uma conta?
+            </span>
+            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
+              Cadastre-se
+            </DropdownMenu.Item>
+          </>
         ) : (
           <>
-            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">
-              <User className="h-5 w-5" />
+            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
               Minha conta
             </DropdownMenu.Item>
-            <DropdownMenu.Item className="rounded px-4 py-2 text-zinc-700 outline-none hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">
+            <DropdownMenu.Item className="rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
               <Link
-                href="/chat/settings"
+                href="/favoritos"
                 className="flex w-full items-center gap-4"
               >
-                <Heart className="h-5 w-5" />
                 Favoritos
               </Link>
             </DropdownMenu.Item>
 
             <DropdownMenu.Separator className="m-2 h-px bg-zinc-100 dark:bg-zinc-700" />
-            <DropdownMenu.Item className="rounded px-4 py-2 text-rose-400 outline-none hover:bg-rose-200/20 dark:text-rose-500 dark:hover:bg-rose-300/20">
+            <DropdownMenu.Item className="rounded px-4 py-2 text-rose-400 outline-none dark:text-rose-500">
               <button
                 className="flex w-full items-center gap-4"
                 onClick={handleLogOut}
               >
-                <LogOut className="h-5 w-5" />
                 Sair
               </button>
             </DropdownMenu.Item>

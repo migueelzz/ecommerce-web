@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <footer className="flex w-full flex-col gap-4 bg-zinc-100 pt-8">
-      <div className="mx-auto mt-auto flex w-full max-w-[1280px] flex-col">
+      <div className="mx-auto mt-auto flex w-full max-w-[1024px] flex-col">
         <div className="flex grid-cols-5 flex-col gap-4 px-4 py-4 lg:grid lg:px-0">
           {/* Logotipo */}
           <Link href="/">
