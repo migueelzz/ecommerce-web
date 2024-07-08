@@ -43,7 +43,7 @@ export function ProductsCarousel({ products, title }: ProductsCarouselProps) {
         </div>
       </div>
       <div className="relative overflow-hidden" ref={emblaRef}>
-        <div className="grid-cols-auto grid grid-flow-col gap-4">
+        <div className="grid-cols-auto grid grid-flow-col gap-2">
           {products.map((product) => {
             return (
               <div className="w-[250px] min-w-0 flex-none" key={product.name}>
