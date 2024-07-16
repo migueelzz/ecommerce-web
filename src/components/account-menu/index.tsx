@@ -17,7 +17,7 @@ export function AccountMenu() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <Button variant="ghost" size="icon">
-          <User />
+          <User className="size-5" />
         </Button>
       </DropdownMenu.Trigger>
 

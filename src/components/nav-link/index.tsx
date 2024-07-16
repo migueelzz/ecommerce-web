@@ -3,29 +3,27 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps } from 'react'
 
 interface NavLinkProps extends ComponentProps<'a'> {
   title: string
   href: string
-  children?: ReactNode
 }
 
-export function NavLink({ children, title, href, ...props }: NavLinkProps) {
+export function NavLink({ title, href, ...props }: NavLinkProps) {
   const pathname = usePathname()
   const isActive = pathname === href
 
   return (
-    <div
+    <Link
+      href={href}
+      {...props}
       className={clsx(
-        'flex items-center justify-between rounded-md bg-zinc-50 px-3 py-2 text-sm font-semibold transition hover:bg-zinc-100',
-        isActive ? 'text-rose-500' : 'text-zinc-600',
+        'flex w-32 items-center justify-center p-4 text-sm font-medium uppercase hover:bg-white/10',
+        isActive ? 'text-rose-500' : 'text-zinc-100',
       )}
     >
-      <Link href={href} {...props} className="flex w-full items-center gap-2">
-        <span>{title}</span>
-      </Link>
-      {children}
-    </div>
+      <span>{title}</span>
+    </Link>
   )
 }

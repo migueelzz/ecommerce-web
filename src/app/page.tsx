@@ -4,59 +4,61 @@ import { ProductsCarousel } from '@/components/products-carousel'
 const PRODUCTS = [
   {
     id: '8gu9rccyv8cvb8yw',
-    name: 'Nome do produto',
+    name: 'Camiseta Oversized Fire Broken Bloc (Offwhite)',
     description: 'Descrição do produto aqui...',
-    price: 100,
+    price: 69.93,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Trico-Otimismo.webp?v=1663770862',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-camiseta-oversized-fire-broken-bloc-offwhite-9779.jpg',
+    discount: 30,
+    createdAt: new Date(),
   },
   {
     id: '8gu9rccyv8cvb8yw23',
-    name: 'Nome do produto 2',
+    name: 'Moletom FIRE Ghost Lettering (Preto)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Renda.webp?v=1663770862',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-moletom-fire-ghost-lettering-preto-4888.jpg',
   },
   {
     id: '8gu9rccyv8cvb8ywqweqr',
-    name: 'Nome do produto 3',
+    name: 'Camiseta Oversized Fire Just Playing (Verde)',
     description: 'Descrição do produto aqui...',
-    price: 100,
+    price: 76,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Monocromatico.webp?v=1663770863',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-camiseta-oversized-fire-just-playing-verde-7881.jpg',
   },
   {
     id: '8gu9rccyv8cvb8ywac99fya',
-    name: 'Nome do produto 4',
+    name: 'Camiseta Oversized Fire Extinguisher (Offwhite)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/y2k.webp?v=1663770863',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-camiseta-oversized-fire-extinguisher-offwhite-4490.jpg',
   },
   {
     id: '8gu9rccyv8cvb8yw89sfg8s7tgys',
-    name: 'Nome do produto 5',
+    name: 'Calça Baggy Jeans Fire Apparel Design (Azul)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/romance-no-ar.webp?v=1663770863',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-calca-jeans-reta-fire-apparel-design-azul-1988.jpg',
   },
   {
     id: '8gu9rccyv8cvb8yw89f8as7fta8',
-    name: 'Nome do produto 6',
+    name: 'Boné FIRE Five Penal Running Death Tag (Bege)',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Barbiecore.webp?v=1663770862',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-bone-fire-five-penal-running-death-tag-bege-3301.jpg',
   },
   {
     id: 'a9fuase98gtysnbc78y',
-    name: 'Nome do produto 7',
+    name: 'Calça Baggy Sarja Fire Creative Design Club (Preta) ',
     description: 'Descrição do produto aqui...',
     price: 100,
     img_url:
-      'https://cdn.shopify.com/s/files/1/0127/1739/1931/files/Barbiecore.webp?v=1663770862',
+      'https://imageswscdn.wslojas.com.br/files/24465/MED_produto-calca-baggy-sarja-fire-creative-design-club-preta-3331.jpg',
   },
 ]
 
@@ -66,8 +68,10 @@ export default function Home() {
       <Hero />
 
       <ProductsCarousel products={PRODUCTS} title="Lançamentos" />
+      <ProductsCarousel products={PRODUCTS} title="Camisetas" />
+      <ProductsCarousel products={PRODUCTS} title="Calças" />
 
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col items-center gap-2 lg:flex-row">
         <div className="h-[250px] w-full rounded-md bg-zinc-100" />
         <div className="h-[250px] w-full rounded-md bg-zinc-100" />
       </div>

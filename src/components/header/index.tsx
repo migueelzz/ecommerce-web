@@ -1,37 +1,33 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 
 import { Button } from '../button'
-import { Menu, Search, ShoppingBag, X } from 'lucide-react'
-import { NavLink } from '../nav-link'
+import { Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { AccountMenu } from '../account-menu'
 import Link from 'next/link'
 import { Input } from '../input'
+import { Logo } from '../Logo'
 
 export function Header() {
   return (
-    <Collapsible.Root className="sticky left-0 right-0 top-0 z-20 mx-auto flex h-24 w-full flex-col gap-6 overflow-y-auto border-b bg-white shadow-md no-scrollbar data-[state=open]:bottom-0 data-[state=open]:h-screen lg:right-auto lg:h-36 lg:border-0">
+    <Collapsible.Root className="sticky left-0 right-0 top-0 z-20 mx-auto flex h-20 w-full flex-col overflow-y-auto border-b bg-white no-scrollbar data-[state=open]:bottom-0 data-[state=open]:h-screen lg:right-auto lg:h-28">
       <div className="mx-auto flex w-full max-w-[1024px] flex-col gap-4 p-4 data-[state=open]:p-0 lg:px-0">
         <div className="flex items-center justify-between">
           {/* Logotipo */}
           <Link href="/">
-            <div className="flex h-14 w-14 items-center justify-center rounded bg-zinc-900">
-              <span className="text-3xl font-bold uppercase tracking-tight text-zinc-100">
-                DG
-              </span>
-            </div>
+            <Logo />
           </Link>
-          <div className="hidden w-full max-w-[600px] justify-center lg:flex">
+          <form className="hidden w-full max-w-[600px] justify-center lg:flex">
             <Input autoComplete="off" placeholder="Buscar por produtos...">
-              <Button variant="ghost" size="sm">
-                <Search className="h-5 w-5 text-zinc-400" />
-              </Button>
+              <button>
+                <Search className="size-5 text-zinc-400" />
+              </button>
             </Input>
-          </div>
+          </form>
           <div className="flex items-center lg:gap-2">
-            <div className="hidden lg:flex">
+            <div className="hidden gap-2 lg:flex">
               <Button variant="ghost" size="icon">
                 <Link href="/carrinho">
-                  <ShoppingBag className="h-5 w-5" />
+                  <ShoppingCart className="size-5" />
                 </Link>
               </Button>
               <AccountMenu />
@@ -131,17 +127,6 @@ export function Header() {
             </Link>
           </Collapsible.Trigger>
         </Collapsible.Content>
-
-        {/* Links - categorias */}
-        <nav className="hidden w-full items-center gap-2 lg:flex">
-          <NavLink href="/produtos/camisetas" title="Camisetas" />
-          <NavLink href="/calcas" title="Calças" />
-          <NavLink href="/calcados" title="Calçados" />
-          <NavLink href="/mulher" title="Mulher" />
-          <NavLink href="/homem" title="Homem" />
-          <NavLink href="/infantil" title="Infantil" />
-          <NavLink href="/promocoes" title="Promoções" />
-        </nav>
       </div>
     </Collapsible.Root>
   )

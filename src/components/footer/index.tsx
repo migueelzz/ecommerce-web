@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Logo } from '../Logo'
 
 export function Footer() {
   return (
@@ -7,11 +8,7 @@ export function Footer() {
         <div className="flex grid-cols-5 flex-col gap-4 px-4 py-4 lg:grid lg:px-0">
           {/* Logotipo */}
           <Link href="/">
-            <div className="flex h-14 w-14 items-center justify-center rounded bg-zinc-900">
-              <span className="text-3xl font-bold uppercase tracking-tight text-zinc-100">
-                DG
-              </span>
-            </div>
+            <Logo />
           </Link>
 
           <div className="flex flex-col gap-2">
