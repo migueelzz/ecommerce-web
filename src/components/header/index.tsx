@@ -6,10 +6,11 @@ import { AccountMenu } from '../account-menu'
 import Link from 'next/link'
 import { Input } from '../input'
 import { Logo } from '../Logo'
+import { MenuLink } from '../menu-link'
 
 export function Header() {
   return (
-    <Collapsible.Root className="sticky left-0 right-0 top-0 z-20 mx-auto flex h-20 w-full flex-col overflow-y-auto border-b bg-white no-scrollbar data-[state=open]:bottom-0 data-[state=open]:h-screen lg:right-auto lg:h-28">
+    <Collapsible.Root className="sticky left-0 right-0 top-0 z-20 mx-auto flex h-20 w-full flex-col overflow-y-auto bg-white no-scrollbar data-[state=open]:bottom-0 data-[state=open]:h-screen lg:right-auto lg:h-auto">
       <div className="mx-auto flex w-full max-w-[1024px] flex-col gap-4 p-4 data-[state=open]:p-0 lg:px-0">
         <div className="flex items-center justify-between">
           {/* Logotipo */}
@@ -128,6 +129,8 @@ export function Header() {
           </Collapsible.Trigger>
         </Collapsible.Content>
       </div>
+
+      <MenuLink />
     </Collapsible.Root>
   )
 }

@@ -1,6 +1,6 @@
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
-import { Minus, Plus } from 'lucide-react'
+import { Heart, Minus, Plus, Share2 } from 'lucide-react'
 
 export default function ProdutoId() {
   return (
@@ -14,14 +14,24 @@ export default function ProdutoId() {
           />
         </div>
         <div className="flex h-min flex-col gap-2 rounded-lg border px-8 py-4">
-          <div className="flex items-center gap-2">
-            <span className="w-min rounded-lg bg-zinc-800 p-2 text-xs text-zinc-100">
-              Lançamento
-            </span>
+          <div className="flex items-center justify-between">
+            <div className="space-x-2">
+              <span className="w-min rounded-lg bg-zinc-800 p-2 text-xs text-zinc-100">
+                Lançamento
+              </span>
+              <span className="w-min rounded-lg bg-zinc-800 p-2 text-xs text-zinc-100">
+                -30%
+              </span>
+            </div>
 
-            <span className="w-min rounded-lg bg-zinc-800 p-2 text-xs text-zinc-100">
-              -30%
-            </span>
+            <div className="flex items-center gap-2">
+              <button className="focus:text-rose-500">
+                <Heart className="size-5" />
+              </button>
+              <button>
+                <Share2 className="size-5" />
+              </button>
+            </div>
           </div>
           <h1 className="text-2xl font-semibold text-zinc-800">
             Camiseta Oversized Fire Broken Bloc (Offwhite)

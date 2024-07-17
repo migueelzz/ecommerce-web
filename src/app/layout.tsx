@@ -24,7 +24,6 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Alert /> */}
         <Header />
-        <MenuLink />
 
         <div className="mx-auto flex min-h-screen w-full max-w-[1024px] flex-col px-4 lg:px-0">
           <main className="pb-8 pt-4">{children}</main>

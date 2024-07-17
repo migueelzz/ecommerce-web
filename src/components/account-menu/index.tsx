@@ -7,11 +7,11 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../button'
 
 export function AccountMenu() {
-  const isAuth = false
+  const isAuth = true
   const { push } = useRouter()
 
   function handleLogOut() {
-    push('/sign-in')
+    push('/login')
   }
   return (
     <DropdownMenu.Root>
@@ -48,7 +48,17 @@ export function AccountMenu() {
         ) : (
           <>
             <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
-              Minha conta
+              <Link href="/perfil" className="flex w-full items-center gap-4">
+                Meu perfil
+              </Link>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
+              <Link
+                href="/perfil/pedidos"
+                className="flex w-full items-center gap-4"
+              >
+                Meus pedidos
+              </Link>
             </DropdownMenu.Item>
             <DropdownMenu.Item className="rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
               <Link
