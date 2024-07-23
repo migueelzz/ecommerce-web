@@ -5,7 +5,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
 import './globals.css'
-import { MenuLink } from '@/components/menu-link'
+import { Alert } from '@/components/alert'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="antialiased">
       <body className={inter.className}>
-        {/* <Alert /> */}
+        <Alert />
         <Header />
 
         <div className="mx-auto flex min-h-screen w-full max-w-[1024px] flex-col px-4 lg:px-0">

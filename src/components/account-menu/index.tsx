@@ -5,14 +5,17 @@ import { User } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Button } from '../button'
+import { useState } from 'react'
 
 export function AccountMenu() {
-  const isAuth = true
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
   const { push } = useRouter()
 
   function handleLogOut() {
+    setIsAuthenticated(false)
     push('/login')
   }
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -25,7 +28,7 @@ export function AccountMenu() {
         className="mr-2 mt-2 min-w-40 rounded-md border border-zinc-200 bg-white p-2 text-sm shadow-md will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade dark:border-zinc-700 dark:bg-zinc-900"
         align="end"
       >
-        {!isAuth ? (
+        {!isAuthenticated ? (
           <>
             <DropdownMenu.Item className="flex cursor-pointer items-center gap-4 rounded px-4 py-2 text-zinc-700 outline-none dark:text-zinc-300">
               <Link href="/login" className="flex w-full items-center gap-4">
